@@ -9,7 +9,7 @@ const dbConexion = async () => {
         mongoose.connect(url);
         console.log("Conexion a la DB exitosa");
     } catch (error) {
-     throw new Error("Erroe de conexion, comunicate con el administrador");
+     throw new Error("Error de conexion, comunicate con el administrador");
     }
 }
 
