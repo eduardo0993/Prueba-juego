@@ -14,6 +14,22 @@ const crearVehiculo = async(req,res) =>{
    
 }
 
+const getVehiculo = async (req, res) => {
+    try {
+        const estado = await vehiculoServicio.getVehiculo();
+        return res.status(200).send(estado)
+    } catch (e) {
+        console.log(e)
+        return res.status(500).send({
+            Status:"Error",
+            Message:"Contacte al admin",
+            Token: null,
+        })
+    }
+}
+
     module.exports= {
-    crearVehiculo
+    crearVehiculo,
+    getVehiculo
+
     }

@@ -8,7 +8,7 @@ const vehiculoSchema = Schema({
 
 vehiculoSchema.method("toJSON", function(){
   const {_id, ...object} = this.toObject();
-  object.uid = _id;
+  object.id = _id;
   return object;
 });
 
