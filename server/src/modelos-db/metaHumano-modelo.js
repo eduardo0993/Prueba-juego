@@ -10,7 +10,7 @@ const metaHumanoSchema = Schema({
     poder:Array,
     registro_vehi: String,
     tipo_vehi:String
-},{versionkey:false});
+},{versionKey:false});
 
 metaHumanoSchema.method("toJSON", function(){
   const {_id, ...object} = this.toObject();
