@@ -20,6 +20,10 @@ const crearVehiculo = async(car) =>{
 
 }
 
+const getVehiculo = async() =>{
+
+}
+
 module.exports= {
     crearVehiculo
 };

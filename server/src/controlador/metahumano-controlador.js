@@ -14,6 +14,21 @@ const crearMetaHumano = async (req,res) => {
     }
 }
 
+const getmetahumano = async (req,res) => {
+  try {
+    const estado = await metaHumanoServicio.getmetahumano();
+    return res.status(200).send(estado);
+  } catch (e) {
+    console.log(e)
+    return res.Status(500).send({
+      Status:"Error",
+      Message:"Contacte al admin",
+      Token: null,
+    })
+  }
+}
+
 module.exports={
-    crearMetaHumano
+    crearMetaHumano,
+    getmetahumano
 }

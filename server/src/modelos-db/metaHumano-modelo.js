@@ -5,7 +5,7 @@ const metaHumanoSchema = Schema({
     apellidos:String,
     alias:String,
     bando:String,
-    ciudad:String,
+    ciudad_operacion:String,
     condicion: String,
     poder:Array,
     registro_vehi: String,
