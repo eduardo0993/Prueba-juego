@@ -41,7 +41,7 @@ const getmetahumano = async() =>{
         tipo_vehi:1    
     }
    )
-}
+};
 
 const filtrarMetaHumano = async (nombres) =>{
     const res = await metahumano.find({
@@ -57,9 +57,25 @@ const filtrarLugarOperacion = async (ciudad_operacion) =>{
     return res
 };
 
+const updateMetaHumano = async (id,nombres,ciudad_operacion)=>{
+    const est = await metahumano.updateOne({_id:id},{
+        $set:{
+            nombres:nombres,
+            ciudad_operacion:ciudad_operacion
+        }
+    })
+
+    return 'Campos actualizados'
+};
+
+
+
+
+
 module.exports={
     crearMetaHumano,
     getmetahumano,
     filtrarMetaHumano,
-    filtrarLugarOperacion
+    filtrarLugarOperacion,
+    updateMetaHumano
 };
