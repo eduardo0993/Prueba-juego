@@ -20,7 +20,8 @@ const filtrarLugarOperacion = async(ciudad_operacion) => {
 const updateMetaHumano = async(_id,nombres,ciudad_operacion)=> {
     return await metaHumano.updateMetaHumano(_id,nombres,ciudad_operacion);
 }
-    
+
+//const asignarVehiculo = async
 
 module.exports = {
     crearMetaHumano,
