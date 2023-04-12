@@ -7,7 +7,7 @@ const crearMetaHumano = async(user) => {
         apellidos:user.apellidos,
         alias:user.alias,
         bando:user.bando,
-        ciudad_operacion:user.ciudad,
+        ciudad_operacion:user.ciudad_operacion,
         condicion:user.condicion,
         poder:user.poder,
         registro_vehi: user.registro_vehi,
@@ -43,7 +43,23 @@ const getmetahumano = async() =>{
    )
 }
 
+const filtrarMetaHumano = async (nombres) =>{
+    const res = await metahumano.find({
+        nombres:nombres,
+    })
+    return res
+};
+
+const filtrarLugarOperacion = async (ciudad_operacion) =>{
+    const res = await metahumano.find({
+        ciudad_operacion:ciudad_operacion,
+    })
+    return res
+};
+
 module.exports={
     crearMetaHumano,
-    getmetahumano
+    getmetahumano,
+    filtrarMetaHumano,
+    filtrarLugarOperacion
 };

@@ -7,4 +7,8 @@ rutas.post("/crearMetaHumano", rutasControlador.crearMetaHumano);
 
 rutas.post("/getUsuario",rutasControlador.getmetahumano);
 
+rutas.post("/filtrarMetaHumanoNombre",rutasControlador.filtrarMetaHumano);
+
+rutas.post("/filtrarMetaHumanoCiudad",rutasControlador.filtrarLugarOperacion);
+
 module.exports= rutas;

@@ -8,7 +8,18 @@ const crearMetaHumano = async(user) => {
 const getmetahumano = async() => {
     return await metaHumano.getmetahumano();
 }
+
+const filtrarMetaHumano = async(nombres) => {
+    return await metaHumano.filtrarMetaHumano(nombres);
+}
+
+const filtrarLugarOperacion = async(ciudad_operacion) => {
+    return await metaHumano.filtrarLugarOperacion(ciudad_operacion);
+}
+
 module.exports = {
     crearMetaHumano,
-    getmetahumano
+    getmetahumano,
+    filtrarMetaHumano,
+    filtrarLugarOperacion
 };

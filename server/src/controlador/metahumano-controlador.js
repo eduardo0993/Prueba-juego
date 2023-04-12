@@ -28,7 +28,33 @@ const getmetahumano = async (req,res) => {
   }
 }
 
+const filtrarMetaHumano = async (req,res) =>{
+  try {
+    const resp = await metaHumanoServicio.filtrarMetaHumano(req.body.nombres);
+    return res.status(200).send(resp);
+  } catch (e) {
+    return res.Status(500).send({
+      Status: "Error",
+      Message: "Contacte al admin",
+    })
+  }
+}
+
+const filtrarLugarOperacion = async (req,res) =>{
+  try {
+    const resp = await metaHumanoServicio.filtrarLugarOperacion(req.body.ciudad_operacion);
+    return res.status(200).send(resp);
+  } catch (e) {
+    return res.Status(500).send({
+      Status: "Error",
+      Message: "Contacte al admin",
+    })
+  }
+}
+
 module.exports={
     crearMetaHumano,
-    getmetahumano
+    getmetahumano,
+    filtrarMetaHumano,
+    filtrarLugarOperacion
 }
