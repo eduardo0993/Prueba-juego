@@ -20,6 +20,18 @@ const crearVehiculo = async(car) =>{
 
 }
 
+const getVehiculo = async() =>{
+  return await vehiculo.find(
+    {},
+    {
+        nombre:1,
+        tipo:1,
+        registro:1  
+    }
+  )
+}
+
 module.exports= {
-    crearVehiculo
+    crearVehiculo,
+    getVehiculo
 };

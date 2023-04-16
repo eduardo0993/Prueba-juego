@@ -4,11 +4,11 @@ const vehiculoSchema = Schema({
     nombre:String,
     tipo:String,
     registro:String
-},{versionkey:false});
+},{versionKey:false});
 
 vehiculoSchema.method("toJSON", function(){
   const {_id, ...object} = this.toObject();
-  object.uid = _id;
+  object.id = _id;
   return object;
 });
 

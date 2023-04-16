@@ -3,7 +3,7 @@ const vehiculosRutas = require ("./vehiculos-rutas");
 
 module.exports = (app) =>{
     //app.use("/api", pendiente);
-    //app.use("/api", vehiculosRutas);
+    app.use("/api", vehiculosRutas);
     app.use("/api", metaHumanoRutas);
 
     app.get("/load", (req,resp)=> {

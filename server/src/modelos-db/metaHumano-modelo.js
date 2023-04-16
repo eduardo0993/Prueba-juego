@@ -5,16 +5,16 @@ const metaHumanoSchema = Schema({
     apellidos:String,
     alias:String,
     bando:String,
-    ciudad:String,
+    ciudad_operacion:String,
     condicion: String,
     poder:Array,
     registro_vehi: String,
     tipo_vehi:String
-},{versionkey:false});
+},{versionKey:false});
 
 metaHumanoSchema.method("toJSON", function(){
   const {_id, ...object} = this.toObject();
-  object.uid = _id;
+  object.id = _id;
   return object;
 });
 
