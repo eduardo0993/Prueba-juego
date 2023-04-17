@@ -68,13 +68,15 @@ const updateMetaHumano = async (id,nombres,ciudad_operacion)=>{
     return 'Campos actualizados'
 };
 
-/* const asignarVehiculo = async (id,vehiculo) =>{
+ const asignarVehiculo = async (id,tipo_vehi) =>{
     const est = await metahumano.updateOne({_id:id},{
         $set:{
-            vehiculo:vehiculo
+            tipo_vehi:tipo_vehi
         }
     })
-} */
+
+    return 'Vehiculo asignado'
+}
 
 
 
@@ -85,5 +87,5 @@ module.exports={
     filtrarMetaHumano,
     filtrarLugarOperacion,
     updateMetaHumano,
-   // asignarVehiculo
+    asignarVehiculo
 };
