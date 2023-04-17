@@ -54,7 +54,20 @@ const filtrarLugarOperacion = async (req,res) =>{
 
 const updateMetaHumano = async (req,res) => {
   try {
-    const resp = await metaHumanoServicio.updateMetaHumano(req.body._id,req.body.nombres,req.body.ciudad_operacion);
+    const resp = await metaHumanoServicio.updateMetaHumano(req.body._id,req.body.nombres);
+    return res.status(200).send(resp)
+  } catch (e) {
+    return res.status(500).send({
+       Status: "Error",
+       Message:"Contacte al admin"
+    })
+  }
+
+}
+
+const updateMetaHumanoCiudad_operacion = async (req,res) => {
+  try {
+    const resp = await metaHumanoServicio.updateMetaHumanoCiudad_operacion(req.body._id,req.body.ciudad_operacion);
     return res.status(200).send(resp)
   } catch (e) {
     return res.status(500).send({
@@ -83,5 +96,6 @@ module.exports={
     filtrarMetaHumano,
     filtrarLugarOperacion,
     updateMetaHumano,
-    asignarVehiculo
+    asignarVehiculo,
+    updateMetaHumanoCiudad_operacion
 }

@@ -11,7 +11,9 @@ rutas.post("/filtrarMetaHumanoNombre",rutasControlador.filtrarMetaHumano);
 
 rutas.post("/filtrarMetaHumanoCiudad",rutasControlador.filtrarLugarOperacion);
 
-rutas.post("/updateMetaHumano",rutasControlador.updateMetaHumano); 
+rutas.post("/updateMetaHumano",rutasControlador.updateMetaHumano);
+
+rutas.post("/updateMetaHumanoCiudadOperacion",rutasControlador.updateMetaHumanoCiudad_operacion)
 
 rutas.post("/asignarVehiculo",rutasControlador.asignarVehiculo);
 
