@@ -13,4 +13,6 @@ rutas.post("/filtrarMetaHumanoCiudad",rutasControlador.filtrarLugarOperacion);
 
 rutas.post("/updateMetaHumano",rutasControlador.updateMetaHumano); 
 
+rutas.post("/asignarVehiculo",rutasControlador.asignarVehiculo);
+
 module.exports= rutas;

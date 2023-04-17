@@ -65,10 +65,23 @@ const updateMetaHumano = async (req,res) => {
 
 }
 
+const asignarVehiculo = async (req,res) => {
+  try {
+    const resp = await metaHumanoServicio.asignarVehiculo(req.body._id,req.body.tipo_vehi);
+    return res.status(200).send(resp)
+  } catch (e) {
+    return res.status (500).send({
+      Status: "Error",
+      Message:"Contacte al admin"
+    })
+  }
+}
+
 module.exports={
     crearMetaHumano,
     getmetahumano,
     filtrarMetaHumano,
     filtrarLugarOperacion,
-    updateMetaHumano
+    updateMetaHumano,
+    asignarVehiculo
 }

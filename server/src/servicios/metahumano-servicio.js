@@ -21,13 +21,16 @@ const updateMetaHumano = async(_id,nombres,ciudad_operacion)=> {
     return await metaHumano.updateMetaHumano(_id,nombres,ciudad_operacion);
 }
 
-//const asignarVehiculo = async
+const asignarVehiculo = async(_id,tipo_vehi) => {
+    return await metaHumano.asignarVehiculo(_id,tipo_vehi);
+}
 
 module.exports = {
     crearMetaHumano,
     getmetahumano,
     filtrarMetaHumano,
     filtrarLugarOperacion,
-    updateMetaHumano
+    updateMetaHumano,
+    asignarVehiculo
     
 };
