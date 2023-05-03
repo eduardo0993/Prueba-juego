@@ -1,15 +1,15 @@
 const { Schema, modelo, model } = require("mongoose");
 
 const metaHumanoSchema = Schema({
-    nombres:String,
-    apellidos:String,
-    alias:String,
-    bando:String,
-    ciudad_operacion:String,
-    condicion: String,
-    poder:Array,
-    registro_vehi: String,
-    tipo_vehi:String
+    nombres:{type:String,require:true},
+    apellidos:{type:String,require:true},
+    alias:{type:String,require:true},
+    bando:{type:String,require:true},
+    ciudad_operacion:{type:String,require:true},
+    condicion: {type:String,require:true},
+    poder:{type:Array,require:true},
+    registro_vehi:{type:String,require:true},
+    tipo_vehi:{type:String,require:true},
 },{versionKey:false});
 
 metaHumanoSchema.method("toJSON", function(){

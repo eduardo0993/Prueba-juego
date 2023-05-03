@@ -6,9 +6,9 @@ const crearMetaHumano = async (req,res) => {
        return res.status(200).send(estado);
     } catch (e) {
       console.log(e);
-      return res.status(500).send({
+      return res.status(400).send({
         Status: "Error",
-        Message: "Contacte al admin",
+        Message: "Por favor verifique que todos los campos esten diligenciados, Si no comuniquese con el admin",
         Token: null,
       })
     }

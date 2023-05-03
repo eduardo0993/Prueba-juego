@@ -1,6 +1,6 @@
 const express = require("express");
 const rutasControlador = require("../controlador/metahumano-controlador");
-
+const {body, validationResult} =require('express-validator')
 const rutas = express.Router();
 
 rutas.post("/crearMetaHumano", rutasControlador.crearMetaHumano);
@@ -15,6 +15,6 @@ rutas.post("/updateMetaHumano",rutasControlador.updateMetaHumano);
 
 rutas.post("/updateMetaHumanoCiudadOperacion",rutasControlador.updateMetaHumanoCiudad_operacion)
 
-rutas.post("/asignarVehiculo",rutasControlador.asignarVehiculo);
+rutas.post("/asignarVehiculo",rutasControlador.asignarVehiculo,);
 
 module.exports= rutas;

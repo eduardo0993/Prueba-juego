@@ -1,32 +1,45 @@
 
 const metahumano = require("../modelos-db/metaHumano-modelo");
 
-const crearMetaHumano = async(user) => {
-    const use = new metahumano({
-        nombres:user.nombres,
-        apellidos:user.apellidos,
-        alias:user.alias,
-        bando:user.bando,
-        ciudad_operacion:user.ciudad_operacion,
-        condicion:user.condicion,
-        poder:user.poder,
-        registro_vehi: user.registro_vehi,
-        tipo_vehi:user.tipo_vehi
-    })
-    
-    await use.save()
-    const userId = await metahumano.findOne({
-        nombres:user.nombres    
-    },{_id:1})
-    
-    await metahumano.updateOne({
-        _id:userId._id.toString()
-    },{$set:{id:userId._id.toString()}})
 
-    return "Meta humano registrado"
+const crearMetaHumano = async(user) => {
+    try {
+
+        if (!user.nombres || !user.apellidos || !user.alias || !user.bando || !user.ciudad_operacion || !user.condicion || !user.poder || !user.registro_vehi || !user.tipo_vehi) {
+                throw new Error("Todos los campos son obligatorios.");
+        }
+        const use = new metahumano({
+            nombres:user.nombres,
+            apellidos:user.apellidos,
+            alias:user.alias,
+            bando:user.bando,
+            ciudad_operacion:user.ciudad_operacion,
+            condicion:user.condicion,
+            poder:user.poder,
+            registro_vehi: user.registro_vehi,
+            tipo_vehi:user.tipo_vehi
+        })
+        
+        await use.save()
+        const userId = await metahumano.findOne({
+            nombres:user.nombres    
+        },{_id:1})
+        
+        await metahumano.updateOne({
+            _id:userId._id.toString()
+        },{$set:{id:userId._id.toString()}})
+
+        return "Meta humano registrado"
+
+    } catch (error) {
+        throw error
+    }
+    
+    
 }
 
-const getmetahumano = async() =>{
+
+const getmetahumano = async() => {
    return await metahumano.find(
     {},
     {
